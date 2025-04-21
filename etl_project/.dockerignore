@@ -1,0 +1,11 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+*.duckdb
+tmp2xky_gzc/history/
+*.csv
+*.xlsx
+*.json

@@ -1,0 +1,31 @@
+instance_class: dagster.core.instance.DagsterInstance
+storage:
+  local_artifact_storage:
+    base_dir: /tmp/dagster_storage
+  run_storage:
+    module: dagster.core.storage.runs
+    class: SqlRunStorage
+    config:
+      database_url: sqlite:///dagster_runs.db
+  event_log_storage:
+    module: dagster.core.storage.event_log
+    class: SqlEventLogStorage
+    config:
+      database_url: sqlite:///dagster_event_log.db
+
+scheduler:
+  module: dagster.core.scheduler
+  class: DefaultScheduler
+
+run_launcher:
+  module: dagster.core.launcher
+  class: DefaultRunLauncher
+  config: {}
+
+schedules:
+  # Définition d'un schedule simple pour l'exécution du job tous les jours à minuit
+  - name: daily_earthquake_job
+    cron_schedule: "0 0 * * *"
+    job: earthquake_pipeline
+
+sensors: []
