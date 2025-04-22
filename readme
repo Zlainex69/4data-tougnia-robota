@@ -1,0 +1,8 @@
+Nous avons travaillé avec Dagster, Python et VS Code. Pour lancer le projet, nous utilisons la commande dagster dev dans le terminal.
+Nous avons configuré plusieurs éléments essentiels :
+Assets : Ils définissent les données et leur transformation au sein du pipeline.
+Jobs : Ils orchestrent l’exécution des différentes tâches du projet.
+Schedulers : Ils planifient automatiquement l’exécution des jobs à des intervalles définis.
+Sensors : Ils surveillent les événements et déclenchent les traitements en fonction des conditions.
+Dans notre cas, nous exploitons une API de séismes, un choix pertinent compte tenu des tendances actuelles où les catastrophes naturelles et la surveillance des risques géologiques sont cruciales. Les données sismiques permettent d’anticiper des événements et d’améliorer la prévention.
+Le traitement suit cette logique : récupération des données via l’API, stockage, traitement, puis restitution des informations analysées.
